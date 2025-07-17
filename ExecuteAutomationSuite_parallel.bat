@@ -1,0 +1,1 @@
+mvn test -PTestParallel -DEnvironment=DEV -Dgroups=Regression

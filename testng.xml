@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="2" parallel="false"
+	group-by-instances="true">
+	
+	<parameter name="groups" value="Regression" />
+	<parameter name="environment" value="Dev" />
+	<parameter name="browser" value="Chrome" />
+	<parameter name="nodeUrl" value=""/>
+	<parameter name="testing" value="UI"/>
+
+	<test name="R360 Data Dictionary Test">
+		<classes>
+			<class name="testCases.LoginTC" />
+		</classes>
+	</test> <!-- Test -->
+	</suite> <!-- Suite -->

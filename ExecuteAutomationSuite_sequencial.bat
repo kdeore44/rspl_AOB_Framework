@@ -1,0 +1,1 @@
+mvn test -PTestSequencial -DBrowser=Chrome -DEnvironment=DEV -Dgroups=Regression
