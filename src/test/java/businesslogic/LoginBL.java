@@ -52,14 +52,14 @@ public class LoginBL extends ExtentReportBuilder {
 
 			if (objCM.isElementPresent(driver, objLoginOR.txtUsername)) {
 				ExtentReportBuilder.ReportTestStep("PASSED", "PASS",
-						"Used logged in to application successfully", mthName);
+						"User logged in to application successfully", mthName);
 			} else {
 				ExtentReportBuilder.ReportTestStep("FAILED", "FAIL",
-						"Used is NOT logged in to application successfully", mthName);
+						"User is NOT logged in to application successfully", mthName);
 			}
 		} catch (Exception e) {
 			ExtentReportBuilder.ReportTestStep("FAILED", "FAIL",
-					"Used is NOT logged in to application successfully"+e, mthName);
+					"Use is NOT logged in to application successfully"+e, mthName);
 			e.printStackTrace();
 			Assert.fail();
 		}

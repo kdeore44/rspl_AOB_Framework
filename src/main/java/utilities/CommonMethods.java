@@ -13,6 +13,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -167,6 +168,10 @@ public class CommonMethods {
 		return true;
 		
 	}
+	
+	
+	        
+	    
 
 	/**
 	 * Clears and sets text in textbox and highlight the textbox boundary with RED
@@ -721,4 +726,78 @@ public class CommonMethods {
 			return 1;
 		}
 	}
+	
+	//Kalpesh
+	public void waitForSearchResult(WebDriver driver, String oppoID, int timeoutInSeconds) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+	    try {
+	    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[contains(normalize-space(text()),'" + oppoID + "')]")));
+
+	    } catch (TimeoutException e) {
+	        throw new RuntimeException("Opportunity ID '" + oppoID + "' did not appear in search results within timeout.");
+	    }
+	}
+	
+	//Kalpesh
+		public boolean scrollToElement(WebDriver driver, By locator) {
+		    try {
+		        WebElement objWE = driver.findElement(locator);
+		        
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+		        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", objWE);
+
+		        return true;
+		    } catch (Exception e) {
+		        log.error("Error while scrolling to element: " + e.getMessage(), e);
+		        e.printStackTrace();
+		        return false;
+		    }
+		}
+		
+		//Kalpesh ---- Parameter as a Webelement
+		public boolean scrollToElement(WebDriver driver, WebElement ele) {
+		    try {
+		        WebElement objWE = ele;
+		        
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+		        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", objWE);
+
+		        return true;
+		    } catch (Exception e) {
+		        log.error("Error while scrolling to element: " + e.getMessage(), e);
+		        e.printStackTrace();
+		        return false;
+		    }
+		}
+		
+		//Kalpesh
+		public void JSButtonClick(WebDriver driver, WebElement element) {
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    try {
+		        if (element != null) {
+		            // Wait for visibility and clickability
+		            wait.until(ExpectedConditions.visibilityOf(element));
+		            wait.until(ExpectedConditions.elementToBeClickable(element));
+
+		            if (element.isDisplayed() && element.isEnabled()) {
+		                JavascriptExecutor js = (JavascriptExecutor) driver;
+		                js.executeScript("arguments[0].click();", element);
+		                System.out.println("JSButtonClick: Element clicked via JavaScript.");
+		            } else {
+		                System.out.println("JSButtonClick: Element is visible but not interactable.");
+		            }
+		        } else {
+		            System.out.println("JSButtonClick: Element is null.");
+		        }
+		    } catch (Exception e) {
+		        System.out.println("JSButtonClick: Exception occurred - " + e.getMessage());
+		    }
+		}
+		
+		//kalpesh
+		public void waitUntilInvisibilityOfElement(WebDriver driver, By valueXpath, Duration timeInSeconds) {
+		    WebDriverWait wait = new WebDriverWait(driver, timeInSeconds);
+		    wait.until(ExpectedConditions.invisibilityOfElementLocated(valueXpath));
+		}
+
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AOB Test Suite" thread-count="4" parallel="false" group-by-instances="true">
+
+    <parameter name="groups" value="Regression" />
+    <parameter name="environment" value="QA" />
+    <parameter name="browser" value="Chrome" />
+    <parameter name="nodeUrl" value="" />
+    <parameter name="testing" value="UI" />
+
+   
+        
+    <test name="Verify Sales User RRA Request">
+    	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
+    	<parameter name="Password" value="Ss@082025"/>
+         <parameter name="oppoID" value="E-commerce"/>
+         
+        <classes>
+            <class name="testCases.LoginTest" />
+          <class name="testCases.VerifySalesUserInitiateRRARequest"/> 
+        </classes>
+    </test>
+ 
+  
+  <!-- 
+    <test name="Add New Resource Requisition">
+        <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
+    	<parameter name="Password" value="Ss@082025"/>
+    	
+        <parameter name="oppoID" value="CuraMind AI Patient Monitoring System"/>
+        <parameter name="yearOfExp" value="3-5"/>
+        <parameter name="noOfPositions" value="2"/>
+        <parameter name="resourceType" value="Direct Hiring"/>
+        <parameter name="departmentName" value="BA"/>
+        <classes>
+            <class name="testCases.LoginTest" />
+            <class name="testCases.AddNewResourceRequisition"/>
+        </classes>
+    </test> 
+   -->
+  
+<!--
+    <test name="Verify HOD User Tags Resource">
+    <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
+    	<parameter name="Password" value="Ss@082025"/>
+        <parameter name="oppoID" value="CuraMind AI Patient Monitoring System"/>
+        
+        <classes>
+            <class name="testCases.LoginTest" />
+            <class name="testCases.VerifyHODUserTagsResource"/>
+        </classes>
+    </test>
+     -->
+    
+    <!-- 
+     <test name="Verify Add Reason From Tag Resource And Check On DashBoard">
+    	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
+    	<parameter name="Password" value="Ss@082025"/>
+         <parameter name="oppoID" value="CuraMind AI Patient Monitoring System"/>
+         <parameter name="reason" value="Skill Mismatch"/>
+        
+        <classes>
+            <class name="testCases.LoginTest" />
+          <class name="testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard"/> 
+        </classes>
+    </test>
+  -->
+
+
+</suite>

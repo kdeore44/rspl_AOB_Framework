@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","34855","Verify Sales user can initiate Resource Request Allocation","AOB Test Suite","Tue Aug 05 13:00:11 IST 2025","failed","Tue Aug 05 13:00:46 IST 2025","testCases.VerifySalesUserInitiateRRARequest","Verify Sales User RRA Request","testCases.VerifySalesUserInitiateRRARequest","verifySalesUserInitiateRRARequest"
+"","12423","LoginTC","AOB Test Suite","Tue Aug 05 13:03:43 IST 2025","passed","Tue Aug 05 13:03:55 IST 2025","testCases.LoginTest","Verify Sales User RRA Request","testCases.LoginTest","LoginTC"
+"","10185","Verify Sales user can initiate Resource Request Allocation","AOB Test Suite","Tue Aug 05 13:03:55 IST 2025","passed","Tue Aug 05 13:04:05 IST 2025","testCases.VerifySalesUserInitiateRRARequest","Verify Sales User RRA Request","testCases.VerifySalesUserInitiateRRARequest","verifySalesUserInitiateRRARequest"
+"","11202","LoginTC","AOB Test Suite","Tue Aug 05 13:00:00 IST 2025","passed","Tue Aug 05 13:00:11 IST 2025","testCases.LoginTest","Verify Sales User RRA Request","testCases.LoginTest","LoginTC"

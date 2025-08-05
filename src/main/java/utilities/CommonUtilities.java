@@ -228,6 +228,8 @@ public class CommonUtilities {
 			ExtentReportBuilder.chromeTC = ExtentReportBuilder.chromeTC  + 1;
 		} else if(browserName.equalsIgnoreCase("firefox")) {
 			ExtentReportBuilder.firefoxTC = ExtentReportBuilder.firefoxTC + 1;
+		} else if(browserName.equalsIgnoreCase("edge")) {
+			ExtentReportBuilder.edgeTC=ExtentReportBuilder.edgeTC +1;
 		}
 	}
 	

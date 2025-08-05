@@ -136,6 +136,7 @@ public class ExtentReportBuilder {
 	
 	public static int chromeTC = 0;
 	public static int firefoxTC = 0;
+	public static int edgeTC=0;
 	
 
 	private static void CreateBaseSyntax() {
