@@ -60,7 +60,7 @@ public class ApplicationSetup extends ExtentReportBuilder {
 	@Parameters({ "environment", "browser", "nodeUrl", "groups","testing" })
 	public synchronized void init(@Optional("") String environment,@Optional("") String browser,@Optional("") String nodeUrl,@Optional("") String groups,@Optional("") String testing) throws Exception {
 		
-		testURL= objCU.readPropertyFileEnvProperty("DEVURL");
+		testURL= objCU.readPropertyFileEnvProperty("QAURL");
 		environmentName = environment;
 		
 		System.out.println("URL is for testing before opening browser:   "+testURL);
