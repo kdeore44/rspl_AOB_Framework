@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="1" failed="1" skipped="0">
+<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[<li style="color:#0000FF"> FAILED </li>]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-08-11T14:38:25 IST" name="AOB Test Suite" finished-at="2025-08-11T14:39:30 IST" duration-ms="65182">
+  <suite started-at="2025-08-11T15:24:03 IST" name="AOB Test Suite" finished-at="2025-08-11T15:24:35 IST" duration-ms="32039">
     <groups>
     </groups>
-    <test started-at="2025-08-11T14:38:25 IST" name="Verify Add Reason From Tag Resource And Check On DashBoard" finished-at="2025-08-11T14:39:30 IST" duration-ms="65182">
+    <test started-at="2025-08-11T15:24:03 IST" name="Verify HOD User Tags Resource" finished-at="2025-08-11T15:24:35 IST" duration-ms="32039">
       <class name="testCases.LoginTest">
-        <test-method is-config="true" signature="init(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginTest@63034ed1]" started-at="2025-08-11T14:38:25 IST" name="init" finished-at="2025-08-11T14:38:31 IST" duration-ms="6143" status="PASS">
+        <test-method is-config="true" signature="init(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginTest@355ce6a6]" started-at="2025-08-11T15:24:03 IST" name="init" finished-at="2025-08-11T15:24:13 IST" duration-ms="10339" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,7 +38,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="LoginTC(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginTest@63034ed1]" started-at="2025-08-11T14:38:31 IST" name="LoginTC" finished-at="2025-08-11T14:38:43 IST" duration-ms="12124" status="PASS">
+        <test-method signature="LoginTC(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginTest@355ce6a6]" started-at="2025-08-11T15:24:13 IST" name="LoginTC" finished-at="2025-08-11T15:24:25 IST" duration-ms="11944" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,65 +59,24 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTC -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@63034ed1]" started-at="2025-08-11T14:39:28 IST" name="tearDown" finished-at="2025-08-11T14:39:30 IST" duration-ms="1470" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@355ce6a6]" started-at="2025-08-11T15:24:33 IST" name="tearDown" finished-at="2025-08-11T15:24:35 IST" duration-ms="1858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.LoginTest -->
-      <class name="testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard">
-        <test-method signature="verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(java.lang.String, java.lang.String)[pri:0, instance:testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard@5fa47fea]" started-at="2025-08-11T14:38:43 IST" name="verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard" description="Verify User can Add Reason for tagged resource" finished-at="2025-08-11T14:39:28 IST" duration-ms="45207" status="FAIL">
+      <class name="testCases.VerifyHODUserTagsResource">
+        <test-method signature="verifyHODUserCanTagResource(java.lang.String)[pri:0, instance:testCases.VerifyHODUserTagsResource@b768a65]" started-at="2025-08-11T15:24:25 IST" name="verifyHODUserCanTagResource" description="Verify that HOD user can tag a resource for a given opportunity" finished-at="2025-08-11T15:24:33 IST" duration-ms="7508" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[IntelliCare AI Health Risk Model]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Skill Mismatch]]>
+                <![CDATA[CuraMind AI Patient Monitoring System]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Exception while verifying Opportunity ID: Opportunity ID 'IntelliCare AI Health Risk Model' did not appear in search results within timeout.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Exception while verifying Opportunity ID: Opportunity ID 'IntelliCare AI Health Risk Model' did not appear in search results within timeout.
-at org.testng.Assert.fail(Assert.java:97)
-at businesslogic.TagResourcesBL.verifyReasonAppearOnDashBoardScreen(TagResourcesBL.java:306)
-at testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard.verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(VerifyAddReasonFromTagResourceAndCheckOnDashBoard.java:43)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:766)
-at org.testng.TestRunner.run(TestRunner.java:587)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:425)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:68)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
-            <line>
-              <![CDATA[<li style="color:#0000FF"> FAILED </li>]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard -->
-      </class> <!-- testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard -->
-    </test> <!-- Verify Add Reason From Tag Resource And Check On DashBoard -->
+        </test-method> <!-- verifyHODUserCanTagResource -->
+      </class> <!-- testCases.VerifyHODUserTagsResource -->
+    </test> <!-- Verify HOD User Tags Resource -->
   </suite> <!-- AOB Test Suite -->
 </testng-results>

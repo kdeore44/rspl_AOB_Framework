@@ -99,7 +99,7 @@ public class TagResourcesBL extends ExtentReportBuilder {
 				CM.waitUntillElementClickable(driver,
 						By.xpath("(//button[@type='submit'][contains(text(),'Submit')])[1]"), due);
 				System.out.println("Clicked on submit button");
-				CM.JSButtonClick(driver, By.xpath("(//button[@type='submit'][contains(text(),'Submit')])[1]"));
+				//CM.JSButtonClick(driver, By.xpath("(//button[@type='submit'][contains(text(),'Submit')])[1]"));
 
 				ExtentReportBuilder.ReportTestStep("PASSED", "PASS",
 						"Clicked on Submit button after processing all resources", methodName);

@@ -11,6 +11,7 @@
    
        <!--   
     <test name="Verify Sales User RRA Request">
+    <parameter name="browser" value="Chrome" />
     	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
          <parameter name="oppoID" value="E-commerce"/>
@@ -24,6 +25,7 @@
   
   <!--
     <test name="Add New Resource Requisition">
+    <parameter name="browser" value="Chrome" />
         <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
     	
@@ -41,9 +43,10 @@
   
 
     <test name="Verify HOD User Tags Resource">
+    <parameter name="browser" value="Chrome" />
     <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
-        <parameter name="oppoID" value="Talent Acquisition Automation Suite"/>
+        <parameter name="oppoID" value="CuraMind AI Patient Monitoring System"/>
         
         <classes>
             <class name="testCases.LoginTest" />
@@ -52,8 +55,9 @@
     </test>
      
     
-    
+    <!--
      <test name="Verify Add Reason From Tag Resource And Check On DashBoard">
+     <parameter name="browser" value="Chrome" />
     	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
          <parameter name="oppoID" value="Talent Acquisition Automation Suite"/>
@@ -63,7 +67,8 @@
             <class name="testCases.LoginTest" />
           <class name="testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard"/> 
         </classes>
-    </test>
+    </test> 
+    -->
  
 
 

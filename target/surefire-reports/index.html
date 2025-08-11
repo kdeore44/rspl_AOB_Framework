@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-AOB_Test_Suite" class="navigator-link">
-              <span class="suite-name border-failed">AOB Test Suite</span>
+              <span class="suite-name border-passed">AOB Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-AOB_Test_Suite" class="navigator-link ">
-                    <span>C:\Users\kalpesh.deore\eclipse-workspace\rspl_Automation\rspl_qa_training_certification_r-d\ParallelAOB.xml</span>
+                    <span>C:\Users\kalpesh.deore\eclipse-workspace\rspl_Automation\rspl_qa_training_certification_r-d\testngAOB.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-AOB_Test_Suite" class="hide-methods failed suite-AOB_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-AOB_Test_Suite -->
-                      <a href="#" panel-name="suite-AOB_Test_Suite" class="show-methods failed suite-AOB_Test_Suite"> (show)</a> <!-- show-methods failed suite-AOB_Test_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-AOB_Test_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AOB_Test_Suite" title="testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard" class="method navigator-link" hash-for-method="verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(IntelliCare AI Health Risk Model, Skill Mismatch)">verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(IntelliCare AI Health Risk Model, Skill Mismatch)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-AOB_Test_Suite -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,6 +103,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-AOB_Test_Suite" title="testCases.LoginTest" class="method navigator-link" hash-for-method="LoginTC(Chrome, sneh.Solanki@rishabhsoft.com, Ss@082025)">LoginTC(Chrome, sneh.Solanki@rishabhsoft.com, Ss@082025)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AOB_Test_Suite" title="testCases.VerifyHODUserTagsResource" class="method navigator-link" hash-for-method="verifyHODUserCanTagResource(CuraMind AI Patient Monitoring System)">verifyHODUserCanTagResource(CuraMind AI Patient Monitoring System)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-AOB_Test_Suite -->
@@ -131,34 +122,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-AOB_Test_Suite" class="panel AOB_Test_Suite">
-          <div class="suite-AOB_Test_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(IntelliCare AI Health Risk Model, Skill Mismatch)">
-                  </a> <!-- verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(IntelliCare AI Health Risk Model, Skill Mismatch) -->
-                  <span class="method-name">verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard</span>
-                  <span class="parameters">(IntelliCare AI Health Risk Model, Skill Mismatch)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Exception while verifying Opportunity ID: Opportunity ID &apos;IntelliCare AI Health Risk Model&apos; did not appear in search results within timeout.
-	at businesslogic.TagResourcesBL.verifyReasonAppearOnDashBoardScreen(TagResourcesBL.java:306)
-	at testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard.verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(VerifyAddReasonFromTagResourceAndCheckOnDashBoard.java:43)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 17 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Verify User can Add Reason for tagged resource)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-AOB_Test_Suite-class-failed -->
           <div class="suite-AOB_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -175,34 +138,49 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-AOB_Test_Suite-class-passed -->
+          <div class="suite-AOB_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.VerifyHODUserTagsResource</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyHODUserCanTagResource(CuraMind AI Patient Monitoring System)">
+                  </a> <!-- verifyHODUserCanTagResource(CuraMind AI Patient Monitoring System) -->
+                  <span class="method-name">verifyHODUserCanTagResource</span>
+                  <span class="parameters">(CuraMind AI Patient Monitoring System)</span>
+                  <em>
+(Verify that HOD user can tag a resource for a given opportunity)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AOB_Test_Suite-class-passed -->
         </div> <!-- panel AOB_Test_Suite -->
         <div panel-name="test-xml-AOB_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\kalpesh.deore\eclipse-workspace\rspl_Automation\rspl_qa_training_certification_r-d\ParallelAOB.xml</span>
+            <span class="header-content">C:\Users\kalpesh.deore\eclipse-workspace\rspl_Automation\rspl_qa_training_certification_r-d\testngAOB.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;AOB Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; name=&quot;AOB Test Suite&quot; group-by-instances=&quot;true&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;parameter name=&quot;environment&quot; value=&quot;QA&quot;/&gt;
-  &lt;parameter name=&quot;Username&quot; value=&quot;sneh.Solanki@rishabhsoft.com&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
   &lt;parameter name=&quot;testing&quot; value=&quot;UI&quot;/&gt;
   &lt;parameter name=&quot;groups&quot; value=&quot;Regression&quot;/&gt;
   &lt;parameter name=&quot;nodeUrl&quot; value=&quot;&quot;/&gt;
-  &lt;parameter name=&quot;Password&quot; value=&quot;Ss@082025&quot;/&gt;
-  &lt;test thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Verify Add Reason From Tag Resource And Check On DashBoard&quot; verbose=&quot;0&quot;&gt;
-    &lt;parameter name=&quot;reason&quot; value=&quot;Skill Mismatch&quot;/&gt;
-    &lt;parameter name=&quot;oppoID&quot; value=&quot;IntelliCare AI Health Risk Model&quot;/&gt;
+  &lt;test thread-count=&quot;4&quot; name=&quot;Verify HOD User Tags Resource&quot; group-by-instances=&quot;true&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;oppoID&quot; value=&quot;CuraMind AI Patient Monitoring System&quot;/&gt;
     &lt;parameter name=&quot;Username&quot; value=&quot;sneh.Solanki@rishabhsoft.com&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;parameter name=&quot;Password&quot; value=&quot;Ss@082025&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testCases.LoginTest&quot;/&gt;
-      &lt;class name=&quot;testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard&quot;/&gt;
+      &lt;class name=&quot;testCases.VerifyHODUserTagsResource&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Verify Add Reason From Tag Resource And Check On DashBoard --&gt;
+  &lt;/test&gt; &lt;!-- Verify HOD User Tags Resource --&gt;
 &lt;/suite&gt; &lt;!-- AOB Test Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -214,7 +192,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Verify Add Reason From Tag Resource And Check On DashBoard (2 classes)</span>
+                <span class="test-name">Verify HOD User Tags Resource (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -242,18 +220,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard')
-data.setCell(0, 2, 'testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard')
-data.setCell(0, 3, 45207);
+data.setCell(0, 1, 'LoginTC')
+data.setCell(0, 2, 'testCases.LoginTest')
+data.setCell(0, 3, 11944);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'LoginTC')
-data.setCell(1, 2, 'testCases.LoginTest')
-data.setCell(1, 3, 12124);
+data.setCell(1, 1, 'verifyHODUserCanTagResource')
+data.setCell(1, 2, 'testCases.VerifyHODUserTagsResource')
+data.setCell(1, 3, 7508);
 window.suiteTableData['AOB_Test_Suite']= { tableData: data, tableDiv: 'times-div-AOB_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-AOB_Test_Suite">
               </div> <!-- times-div-AOB_Test_Suite -->
             </div> <!-- times-div -->
@@ -264,12 +242,6 @@ return data;
             <span class="header-content">Reporter output for AOB Test Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(IntelliCare AI Health Risk Model, Skill Mismatch)</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output"><li style="color:#0000FF"> FAILED </li></span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-AOB_Test_Suite" class="panel">
@@ -278,7 +250,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard</span>
+              <span class="ignored-class-name">testCases.VerifyHODUserTagsResource</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">init</span>
                 <br/>
@@ -301,23 +273,21 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">LoginTC(Chrome, sneh.Solanki@rishabhsoft.com, Ss@082025)</span>
-                <span class="method-start">6204 ms</span>
+                <span class="method-start">10420 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.VerifyHODUserTagsResource</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifyUserCanAddReasonforTaggedResourceAndValidateitisVisibleOnDashBoard(IntelliCare AI Health Risk Model, Skill Mismatch)</span>
-                <span class="method-start">18483 ms</span>
+                <span class="method-name">verifyHODUserCanTagResource(CuraMind AI Patient Monitoring System)</span>
+                <span class="method-start">22633 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testCases.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">63706 ms</span>
+                <span class="method-start">30162 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
