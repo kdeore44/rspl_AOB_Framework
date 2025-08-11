@@ -29,7 +29,7 @@
 							<version>3.5.3</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testng_parallel.xml</suiteXmlFile>
+									<suiteXmlFile>ParallelAOB.xml</suiteXmlFile>
 								</suiteXmlFiles>
 
 								<!-- System variables passing for TestCase execution -->

@@ -5,6 +5,8 @@
     <parameter name="groups" value="Regression" />
     <parameter name="environment" value="QA" />
     <parameter name="browser" value="Chrome" />
+    <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
+    <parameter name="Password" value="Ss@082025"/>
     <parameter name="nodeUrl" value="" />
     <parameter name="testing" value="UI" />
 
@@ -58,9 +60,9 @@
     
     
      <test name="Verify Add Reason From Tag Resource And Check On DashBoard">
-     <parameter name="browser" value="Chrome" />
-    	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
-    	<parameter name="Password" value="Ss@082025"/>
+    	 <parameter name="browser" value="Chrome" />
+        <parameter name="Username" value="sneh.Solanki@rishabhsoft.com" />
+        <parameter name="Password" value="Ss@082025" />
          <parameter name="oppoID" value="IntelliCare AI Health Risk Model"/>
          <parameter name="reason" value="Skill Mismatch"/>
         
