@@ -9,7 +9,7 @@
     <parameter name="testing" value="UI" />
 
    
-        
+       <!--   
     <test name="Verify Sales User RRA Request">
     	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
@@ -20,9 +20,9 @@
           <class name="testCases.VerifySalesUserInitiateRRARequest"/> 
         </classes>
     </test>
- 
+ -->
   
-  <!-- 
+  <!--
     <test name="Add New Resource Requisition">
         <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
@@ -39,24 +39,24 @@
     </test> 
    -->
   
-<!--
+
     <test name="Verify HOD User Tags Resource">
     <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
-        <parameter name="oppoID" value="CuraMind AI Patient Monitoring System"/>
+        <parameter name="oppoID" value="Talent Acquisition Automation Suite"/>
         
         <classes>
             <class name="testCases.LoginTest" />
             <class name="testCases.VerifyHODUserTagsResource"/>
         </classes>
     </test>
-     -->
+     
     
-    <!-- 
+    
      <test name="Verify Add Reason From Tag Resource And Check On DashBoard">
     	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
-         <parameter name="oppoID" value="CuraMind AI Patient Monitoring System"/>
+         <parameter name="oppoID" value="Talent Acquisition Automation Suite"/>
          <parameter name="reason" value="Skill Mismatch"/>
         
         <classes>
@@ -64,7 +64,7 @@
           <class name="testCases.VerifyAddReasonFromTagResourceAndCheckOnDashBoard"/> 
         </classes>
     </test>
-  -->
+ 
 
 
 </suite>

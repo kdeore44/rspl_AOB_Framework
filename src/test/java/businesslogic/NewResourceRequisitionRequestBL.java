@@ -4,11 +4,10 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.time.Duration;
 import java.util.List;
+import automationEngine.ApplicationSetup;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import objectRepository.NewResourceRequisitionRequestOR;
@@ -24,13 +23,14 @@ public class NewResourceRequisitionRequestBL extends ExtentReportBuilder {
 	NewResourceRequisitionRequestOR objNRR = new NewResourceRequisitionRequestOR();
 	
 	
-	public void fillTheFormAndSubmit(WebDriver driver,
+	public void fillTheFormAndSubmit(
 	        String yearOfExp,
 	        String noOfPositions,
 	        String resourceType,
 	        String departmentName) throws Exception {
 
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver= ApplicationSetup.getDriver();
 	    ExtentReportBuilder.ReportTestStep(methodName, "Started execution of fillTheFormAndSubmit", "INFO");
 
 	    try {

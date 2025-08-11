@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import automationEngine.ApplicationSetup;
 import objectRepository.HomePageOR;
 import objectRepository.OpportunityTrackerOR;
 import objectRepository.ResourceAllocationFormOR;
@@ -32,10 +33,11 @@ public class TagResourcesBL extends ExtentReportBuilder {
 	OpportunityTrackerOR objOT = new OpportunityTrackerOR();
 	// String resourceName;
 
-	public void handleTagResourceAndAddResource(WebDriver driver) throws Exception {
+	public void handleTagResourceAndAddResource() throws Exception {
 		// Initialize method name for reporting
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
+		WebDriver driver = ApplicationSetup.getDriver();
 		ExtentReportBuilder.ReportTestStep("INFO", "INFO", "Started execution of handleTagResourceAndAddResource",
 				methodName);
 
@@ -150,8 +152,9 @@ public class TagResourcesBL extends ExtentReportBuilder {
 	}
 
 
-	public void addReasonforTaggedResource(WebDriver driver, String reason) throws Exception {
+	public void addReasonforTaggedResource(String reason) throws Exception {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver = ApplicationSetup.getDriver();
 	    ExtentReportBuilder.ReportTestStep("INFO", "INFO", "Started execution of addReasonforTaggedResource", methodName);
 
 	    try {
@@ -250,10 +253,10 @@ public class TagResourcesBL extends ExtentReportBuilder {
 	}
 
 	
-	public void verifyReasonAppearOnDashBoardScreen(WebDriver driver, String oppoID) throws Exception {
+	public void verifyReasonAppearOnDashBoardScreen(String oppoID) throws Exception {
 		// Get the current method name for logging
-		String methodName = new Object() {
-		}.getClass().getEnclosingMethod().getName();
+		String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+		 WebDriver driver = ApplicationSetup.getDriver();
 		ExtentReportBuilder.ReportTestStep("INFO", "INFO", "Started Execution to Verify Reason Appear on DashBoard",
 				methodName);
 
@@ -263,7 +266,7 @@ public class TagResourcesBL extends ExtentReportBuilder {
 			ExtentReportBuilder.ReportTestStep("INFO", "INFO", "Clicked on Dashboard Side Menu", methodName);
 
 			// Step 2: Verify Dashboard title is visible
-			objHomeBL.validateDashboardTitleVisibility(driver);
+			objHomeBL.validateDashboardTitleVisibility();
 			ExtentReportBuilder.ReportTestStep("PASSED", "PASS", "DashBoard is Visible", methodName);
 
 			// Step 3: Wait for the Pending Comment Reason Added Count to appear

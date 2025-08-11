@@ -4,10 +4,9 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.time.Duration;
 import java.util.Scanner;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
+import automationEngine.ApplicationSetup;
 import objectRepository.HomePageOR;
 import objectRepository.LoginPageORAOB;
 import utilities.CommonMethods;
@@ -23,8 +22,9 @@ public class LoginBLAOB extends ExtentReportBuilder {
 	Duration due = Duration.ofSeconds(10);
 	HomePageOR objHomePage = new HomePageOR();
 
-	public void clickOnMicrosoftSignInbtn(WebDriver driver) throws IOException, ParseException {
+	public void clickOnMicrosoftSignInbtn () throws IOException, ParseException {
 		String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+		WebDriver driver = ApplicationSetup.getDriver();
 		try {
 			objCM.waitUntillElementClickable(driver, objLoginOR.btnSigninMicrosoft, due);
 			objCM.onMouseHover(driver, objLoginOR.btnSigninMicrosoft);
@@ -38,10 +38,11 @@ public class LoginBLAOB extends ExtentReportBuilder {
 		}
 	}
 
-	public void enterUsername(WebDriver driver, String Username) throws IOException, ParseException {
+	public void enterUsername(String Username) throws IOException, ParseException {
 
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
+		WebDriver driver = ApplicationSetup.getDriver();
 
 		try {
 			objCM.waitUntillElementClickable(driver, objLoginOR.txtUsername, due);
@@ -55,11 +56,11 @@ public class LoginBLAOB extends ExtentReportBuilder {
 
 	}
 
-	public void enterPassword(WebDriver driver, String password) throws IOException, ParseException {
+	public void enterPassword(String password) throws IOException, ParseException {
 
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
-
+		WebDriver driver = ApplicationSetup.getDriver();
 		try {
 			objCM.waitUntillElementClickable(driver, objLoginOR.txtPassword, due);
 			objCM.setText(driver, objLoginOR.txtPassword, password);
@@ -71,11 +72,11 @@ public class LoginBLAOB extends ExtentReportBuilder {
 		}
 	}
 
-	public void clickOnNextBtn(WebDriver driver) throws IOException, ParseException {
+	public void clickOnNextBtn() throws IOException, ParseException {
 
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
-
+		WebDriver driver = ApplicationSetup.getDriver();
 		try {
 			objCM.waitUntillElementClickable(driver,objLoginOR.nextbtn, due);
 			objCM.click(driver, objLoginOR.nextbtn);
@@ -88,11 +89,11 @@ public class LoginBLAOB extends ExtentReportBuilder {
 		}
 	}
 
-	public void clickOnSignInBtn(WebDriver driver) throws IOException, ParseException {
+	public void clickOnSignInBtn() throws IOException, ParseException {
 
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
-
+		WebDriver driver = ApplicationSetup.getDriver();
 		try {
 			objCM.waitUntillElementClickable(driver,objLoginOR.signInbtn, due);
 			objCM.JSButtonClick(driver, objLoginOR.signInbtn);
@@ -105,11 +106,11 @@ public class LoginBLAOB extends ExtentReportBuilder {
 			Assert.fail("Exception occurred while clicking SignIn button: " + e.getMessage());
 		}
 	}
-	public void selectCheckBoxAndClickonYes(WebDriver driver) throws IOException, ParseException {
+	public void selectCheckBoxAndClickonYes() throws IOException, ParseException {
 
 		String methodName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
-
+		WebDriver driver = ApplicationSetup.getDriver();
 		try {
 			
 			objCM.JSButtonClick(driver, objLoginOR.checkBox);
@@ -127,7 +128,8 @@ public class LoginBLAOB extends ExtentReportBuilder {
 	}
 
 
-	public static void waitForManualLogin(WebDriver driver) {
+	public static void waitForManualLogin() {
+		WebDriver driver = ApplicationSetup.getDriver();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("🔒 Please complete Microsoft login manually and then press Enter to continue...");
 		scanner.nextLine();

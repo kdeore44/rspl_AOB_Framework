@@ -27,7 +27,7 @@ public class LoginTC extends ApplicationSetup {
 		try {
 		objCU.browserTCcounter(browser);
 	
-		objLoginBL.userLogin(driver, ApplicationSetup.UID, ApplicationSetup.PAS);
+		objLoginBL.userLogin(getDriver(), ApplicationSetup.UID, ApplicationSetup.PAS);
 				
 		ExtentReportBuilder.ReportTestStep("Console Messages:  ","Pass",""+objCU.printTheConsoleMessage());
 		ExtentReportBuilder.ReportTestStep("Login Function Passed " + Thread.currentThread().getStackTrace()[2].getMethodName(),

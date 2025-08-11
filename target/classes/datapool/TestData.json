@@ -1,0 +1,32 @@
+{
+ "User_Details":
+ {
+    "userName": "user93748",
+      "password": "*****",
+      "id": "id8668"
+          
+        
+},
+"System_Details":
+{
+   "name": "Apple MacBook Pro 16",
+   "data": {
+      "year": 2019,
+      "price": 1849.99,
+      "CPU model": "Intel Core i9",
+      "Hard disk size": "1 TB"
+   }
+},
+"Update_System_Details":
+{
+   "name": "Apple MacBook Pro 16",
+   "data": {
+      "year": 2019,
+      "price": 1849.99,
+      "CPU model": "Intel Core i9",
+      "Hard disk size": "1 TB",
+      "color": "silver"
+   }
+}
+
+}

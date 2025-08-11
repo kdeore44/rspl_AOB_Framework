@@ -25,18 +25,18 @@ public class VerifyHODUserTagsResource extends ApplicationSetup {
         ExtentReportBuilder.ReportTestStep(methodName, "Test started: Verify HOD user can tag resource", "INFO");
 
         // Step 1: Validate dashboard visibility
-        objHomeBL.validateDashboardTitleVisibility(driver);
+        objHomeBL.validateDashboardTitleVisibility();
 
         // Step 2: Navigate to Opportunity Tracker screen
-        objHomeBL.navigateToOpportunityTrackerAndLogStatus(driver);
+        objHomeBL.navigateToOpportunityTrackerAndLogStatus();
 
         // Step 3: Search for the given Opportunity ID
-        objOppoTracker.searchOpportunityAndLogStatus(driver, oppoID);
+        objOppoTracker.searchOpportunityAndLogStatus(oppoID);
 
         // Step 4: Click on the 'Tag Resources' button for given Opportunity
-        objOppoTracker.clickTagResourcesButtonForOppoID(driver, oppoID);
+        objOppoTracker.clickTagResourcesButtonForOppoID(oppoID);
 
         // Step 5: Tag the resource on the Tag Resource screen
-        objTagResource.handleTagResourceAndAddResource(driver);
+        objTagResource.handleTagResourceAndAddResource();
     }
 }

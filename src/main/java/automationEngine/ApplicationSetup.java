@@ -38,7 +38,9 @@ public class ApplicationSetup extends ExtentReportBuilder {
 	public static String testURL;
 	public static String UID;
 	public static String PAS;
-	public static WebDriver driver;
+	//public static WebDriver driver;
+	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
 	public static String filepath = System.getProperty("user.dir") + "\\src\\main\\resources\\datapool\\" + "EnvData.properties";
 	public static String browserName;
 	public static String environmentName;
@@ -100,7 +102,7 @@ public class ApplicationSetup extends ExtentReportBuilder {
 			startBrowser(browser,nodeUrl);
 			if(testing.equalsIgnoreCase("UI"))
 			{
-				driver.get(testURL);
+				getDriver().get(testURL);
 			}			
 			
 		ExtentReportBuilder.initExtentReport();
@@ -185,12 +187,13 @@ public class ApplicationSetup extends ExtentReportBuilder {
 				if (selGrid) {
 					System.out.println("Remote Node URL: " + nodeUrl);
 					
-					driver= new RemoteWebDriver(new java.net.URL(nodeUrl), cap);
-					driver.manage().window().maximize();
+					driver.set(new RemoteWebDriver(new java.net.URL(nodeUrl), cap));
+					getDriver().manage().window().maximize();
 				} else {
-					driver = new ChromeDriver(options);
-					driver.manage().window().maximize();
-					driver.manage().timeouts().implicitlyWait(wt,TimeUnit.SECONDS);
+					//driver = new ChromeDriver(options);
+					driver.set(new ChromeDriver(options));
+					getDriver().manage().window().maximize();
+					getDriver().manage().timeouts().implicitlyWait(wt,TimeUnit.SECONDS);
 				}
 				objCU.printToConsole("Browser Launched");
 				
@@ -198,21 +201,21 @@ public class ApplicationSetup extends ExtentReportBuilder {
 
 			case "Firefox":  
 			WebDriverManager.firefoxdriver().setup();
-			driver=new FirefoxDriver();
+			driver.set(new FirefoxDriver());
 			getDriver().manage().timeouts().implicitlyWait(wt, TimeUnit.SECONDS);
 			log.debug(browser + " browser launch sucessfully");
 		    break;
 
 			case "Edge" :
 			WebDriverManager.edgedriver().setup();
-			driver=new EdgeDriver();
+			driver.set(new EdgeDriver());
 			getDriver().manage().timeouts().implicitlyWait(wt, TimeUnit.SECONDS);
 			log.debug(browser + " browser launch sucessfully");
 		    break;
 
 			case "IE":
 			WebDriverManager.iedriver().setup();
-			driver=new InternetExplorerDriver();
+			driver.set(new InternetExplorerDriver());
 			getDriver().manage().timeouts().implicitlyWait(wt, TimeUnit.SECONDS);
 			log.debug(browser + " browser launch sucessfully");
 		
@@ -235,21 +238,27 @@ public class ApplicationSetup extends ExtentReportBuilder {
 	 * @author Rashmi.Patel added on 20 Jan 2021
 	 */
 	@AfterTest(alwaysRun = true)
-	public synchronized void tearDown() {
-		try {
-			driver.quit();
-			log.debug("Application Closed sucessfully");
-			Runtime.getRuntime().exec("taskkill /F /IM chromedriver*");
-			ExtentReportBuilder.ConcludeTestSuite();
-			//ExtentReportBuilder.SendEmailwithReport();
-		} catch (Exception e) {
-			try {
-				Runtime.getRuntime().exec("taskkill /F /IM chromedriver32.exe");
-				log.debug("Application Closed force-fully ");
-			} catch (IOException err) {
-				log.error("IOException in <tearDown> " + err.getMessage());
-			}
-		}
+	public void tearDown() {
+	    try {
+	        WebDriver localDriver = driver.get();
+	        if (localDriver != null) {
+	            localDriver.quit();
+	            log.debug("Browser closed successfully.");
+	            driver.remove(); // Important to clean ThreadLocal
+	        }
+	    } catch (Exception e) {
+	        log.error("Error while quitting the browser: " + e.getMessage());
+	    } finally {
+	        try {
+	            // Always attempt to kill leftover drivers (e.g., zombie processes)
+	            Runtime.getRuntime().exec("taskkill /F /IM chromedriver*");
+	        } catch (IOException ioEx) {
+	            log.error("Error killing chromedriver process: " + ioEx.getMessage());
+	        }
+
+	        // Only if you want this to run once per <test>
+	        ExtentReportBuilder.ConcludeTestSuite();
+	    }
 	}
 
 	/**
@@ -259,7 +268,7 @@ public class ApplicationSetup extends ExtentReportBuilder {
 	 * @author Rashmi.Patel
 	 */
 	public static synchronized WebDriver getDriver() {
-		return driver;
+		return driver.get();
 	}
 
 	

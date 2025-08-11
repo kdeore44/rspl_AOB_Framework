@@ -25,21 +25,21 @@ public class VerifyAddReasonFromTagResourceAndCheckOnDashBoard extends Applicati
         ExtentReportBuilder.ReportTestStep(methodName, "Test started: Verify User can Add Reason for tagged resource", "INFO");
 
         // Step 1:  Validate dashboard visibility
-        objHomeBL.validateDashboardTitleVisibility(driver);
+        objHomeBL.validateDashboardTitleVisibility();
         
         //Step 2: Navigate to Opportunity Tracker screen
-        objHomeBL.navigateToOpportunityTrackerAndLogStatus(driver);
+        objHomeBL.navigateToOpportunityTrackerAndLogStatus();
 
         // Step 3: Search for Opportunity
-        objOppoTracker.searchOpportunityAndLogStatus(driver, oppoID);
+        objOppoTracker.searchOpportunityAndLogStatus(oppoID);
 
         // Step 4: Click on Tag Resource Allocation
-        objOppoTracker.clickTaggedButtonInResourcesColumnAndClickOnEditResource(driver, oppoID);
+        objOppoTracker.clickTaggedButtonInResourcesColumnAndClickOnEditResource(oppoID);
 
         // Step 5: Add Reason for corresponding Tech
-        objTagResource.addReasonforTaggedResource(driver, reason);
+        objTagResource.addReasonforTaggedResource(reason);
 
         // Step 6: Validate Comment/Reason on Pending Action section
-        objTagResource.verifyReasonAppearOnDashBoardScreen(driver, oppoID);
+        objTagResource.verifyReasonAppearOnDashBoardScreen(oppoID);
     }
 }
