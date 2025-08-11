@@ -11,6 +11,7 @@
    
        <!--  
     <test name="Verify Sales User RRA Request">
+    <parameter name="browser" value="Chrome" />
     	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
          <parameter name="oppoID" value="E-commerce"/>
@@ -25,6 +26,7 @@
   
   <!-- 
     <test name="Add New Resource Requisition">
+    <parameter name="browser" value="Chrome" />
         <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
     	
@@ -42,6 +44,7 @@
   
 <!--
     <test name="Verify HOD User Tags Resource">
+    <parameter name="browser" value="Chrome" />
     <parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
         <parameter name="oppoID" value="Engage360 AI Customer Retention Suite"/>
@@ -55,6 +58,7 @@
     
     
      <test name="Verify Add Reason From Tag Resource And Check On DashBoard">
+     <parameter name="browser" value="Chrome" />
     	<parameter name="Username" value="sneh.Solanki@rishabhsoft.com"/>
     	<parameter name="Password" value="Ss@082025"/>
          <parameter name="oppoID" value="IntelliCare AI Health Risk Model"/>
