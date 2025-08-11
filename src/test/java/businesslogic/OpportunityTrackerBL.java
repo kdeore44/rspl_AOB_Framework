@@ -3,21 +3,17 @@ package businesslogic;
 import java.io.IOException;
 import java.text.ParseException;
 import java.time.Duration;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import automationEngine.ApplicationSetup;
 import objectRepository.OpportunityTrackerOR;
 import utilities.CommonMethods;
 import utilities.ExtentReportBuilder;
@@ -30,9 +26,9 @@ public class OpportunityTrackerBL extends ExtentReportBuilder {
 	Duration due = Duration.ofSeconds(30);
 	String oppoID = "";
 
-	public void searchOpportunityAndLogStatus(WebDriver driver, String oppoID) throws IOException, ParseException {
+	public void searchOpportunityAndLogStatus(String oppoID) throws IOException, ParseException {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
-
+	    WebDriver driver = ApplicationSetup.getDriver();
 	    try {
 	        // Wait for Opportunity Search Field
 	        WebElement searchField = CM.waitUntillElementVisible(driver, objOT.oppotunitySearchField, due);
@@ -63,12 +59,12 @@ public class OpportunityTrackerBL extends ExtentReportBuilder {
 	}
 
 
-	public void verifyOppoIDAndClickRequestAllocation(WebDriver driver, String oppoID)
+	public void verifyOppoIDAndClickRequestAllocation(String oppoID)
 	        throws IOException, ParseException {
 
 	    // Initialize method name for reporting
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
-
+	    WebDriver driver = ApplicationSetup.getDriver();
 	    try {
 	        // Step 1: Scroll to Opportunity Table and wait for search result
 	        CM.scrollToElement(driver, objOT.allOppoTable);
@@ -119,9 +115,10 @@ public class OpportunityTrackerBL extends ExtentReportBuilder {
 	}
 
 
-	public void clickTagResourcesButtonForOppoID(WebDriver driver, String oppoID) throws Exception {
+	public void clickTagResourcesButtonForOppoID(String oppoID) throws Exception {
 	    // Initialize method name for reporting
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver = ApplicationSetup.getDriver();
 	    ExtentReportBuilder.ReportTestStep(methodName, "Started execution of clickTagResourcesButtonForOppoID", "INFO");
 
 	    try {
@@ -173,8 +170,9 @@ public class OpportunityTrackerBL extends ExtentReportBuilder {
 
 // Verify Add resource from Tagged Resource and verify on dashboard
 // Function
-	public void clickTaggedButtonInResourcesColumnAndClickOnEditResource(WebDriver driver, String oppoID) throws Exception {
+	public void clickTaggedButtonInResourcesColumnAndClickOnEditResource(String oppoID) throws Exception {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver = ApplicationSetup.getDriver();
 	    ExtentReportBuilder.ReportTestStep(methodName, "Started execution of clickTaggedButtonInResourcesColumnAndClickOnEditResource for: " + oppoID, "INFO");
 
 	    try {
@@ -207,7 +205,7 @@ public class OpportunityTrackerBL extends ExtentReportBuilder {
 	        By taggedBtnLocator = By.xpath("//td[contains(normalize-space(text()),'" + oppoID + "')]//ancestor::tr//a[contains(normalize-space(text()),'Tagged')]");
 	        WebElement tagResourceButton = driver.findElement(taggedBtnLocator);
 
-	        // Step 5: Validate visibility and click
+	        // Step 5: Validate Tagged button visibility and click on EDIT Resource button 
 	        if (tagResourceButton.isDisplayed() && tagResourceButton.isEnabled()) {
 	            ExtentReportBuilder.ReportTestStep(methodName, "'Tagged' button is visible and enabled", "INFO");
 	            CM.JSButtonClick(driver, taggedBtnLocator);

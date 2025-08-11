@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
-
+import automationEngine.ApplicationSetup;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -99,7 +99,8 @@ public class CommonUtilities {
 	 * @param tcStatus - status of test case (Pass / Failed)
 	 * @return - screenshot location
 	 */
-	public String CaptureScreenShot(WebDriver driver, String tcName, String tcStatus) {
+	public String CaptureScreenShot(String tcName, String tcStatus) {
+		 WebDriver driver = ApplicationSetup.getDriver();
 
 		String tcSSPath = System.getProperty("user.dir") + reportsFolderPath;
 		String passTCfolder = "\\Pass\\";
@@ -269,7 +270,7 @@ public class CommonUtilities {
 	 */
 	public ArrayList<String> printTheConsoleMessage()
 	{
-		LogEntries logEntries = ApplicationSetup.driver.manage().logs().get(LogType.BROWSER);
+		LogEntries logEntries = ApplicationSetup.getDriver().manage().logs().get(LogType.BROWSER);
 		ArrayList<String> entryMsg = new ArrayList<String>();
 		 
 		 for(LogEntry entry : logEntries){

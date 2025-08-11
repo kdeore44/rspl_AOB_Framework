@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import automationEngine.ApplicationSetup;
 import objectRepository.HomePageOR;
 import utilities.CommonMethods;
 import utilities.ExtentReportBuilder;
@@ -21,8 +22,9 @@ public class HomeBL extends ExtentReportBuilder {
 	CommonMethods CM = new CommonMethods();
 	Duration due = Duration.ofSeconds(30);
 
-	public void validateDashboardTitleVisibility(WebDriver driver) throws IOException, ParseException {
+	public void validateDashboardTitleVisibility() throws IOException, ParseException {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver = ApplicationSetup.getDriver();
 
 	    try {
 	        // Wait until Dashboard Title is visible
@@ -52,9 +54,9 @@ public class HomeBL extends ExtentReportBuilder {
 	}
 
 	
-	public void navigateToOpportunityTrackerAndLogStatus(WebDriver driver) throws IOException, ParseException {
+	public void navigateToOpportunityTrackerAndLogStatus() throws IOException, ParseException {
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
-
+	    WebDriver driver = ApplicationSetup.getDriver();
 	    try {
 	        // Click on Operations Menu
 	        CM.click(driver, objHomePage.operationsMenu);

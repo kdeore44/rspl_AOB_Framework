@@ -43,6 +43,7 @@ import org.apache.log4j.LogManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
@@ -59,6 +60,8 @@ import automationEngine.ApplicationSetup;
 import library.DateFormatUtilities;
 
 public class ExtentReportBuilder {
+	
+	static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public static String ReportsLocation = "src/main/resources/ExtentReports/Html Reports/";
 	public static String screenshotExtentReportLocation = "ExtentReports/ScreenShots/";
 	private static StringBuffer sb = new StringBuffer(4000);
@@ -522,7 +525,7 @@ public class ExtentReportBuilder {
 			imagePath = fileName;
 		File scrFile = null;
 		try {
-			scrFile = ((TakesScreenshot) ApplicationSetup.driver).getScreenshotAs(OutputType.FILE);
+			scrFile = ((TakesScreenshot) ApplicationSetup.getDriver()).getScreenshotAs(OutputType.FILE);
 			// Now you can do whatever you need to do with it, for example copy somewhere
 			
 				File DestFile = new File(imagePath);

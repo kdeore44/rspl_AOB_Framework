@@ -28,20 +28,22 @@ public class LoginTest extends ApplicationSetup {
 		try {
 			objCU.browserTCcounter(browser);
 
-			objLoginBLAOB.clickOnMicrosoftSignInbtn(driver);
+			objLoginBLAOB.clickOnMicrosoftSignInbtn();
 			//LoginBLAOB.waitForManualLogin(driver);
-			objLoginBLAOB.enterUsername(driver, Username);
-			System.out.println(Username);
-			objLoginBLAOB.clickOnNextBtn(driver);
-			objLoginBLAOB.enterPassword(driver, Password);
-			System.out.println(Password);
-			objLoginBLAOB.clickOnSignInBtn(driver);
 			
-			objLoginBLAOB.selectCheckBoxAndClickonYes(driver);
+			objLoginBLAOB.enterUsername(Username);
+			System.out.println(Username);
+			
+			objLoginBLAOB.clickOnNextBtn();
+			
+			objLoginBLAOB.enterPassword(Password);
+			System.out.println(Password);
+			
+			objLoginBLAOB.clickOnSignInBtn();
+			
+			objLoginBLAOB.selectCheckBoxAndClickonYes();
 			System.out.println("CheckBox Selected");
 			
-			
-
 			ExtentReportBuilder.ReportTestStep("Console Messages:  ", "Pass", "" + objCU.printTheConsoleMessage());
 			ExtentReportBuilder.ReportTestStep(
 					"Login Function Passed " + Thread.currentThread().getStackTrace()[2].getMethodName(), "PASS",

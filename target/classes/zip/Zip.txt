@@ -1,0 +1,2 @@
+# DO NOT DELETE THIS
+This folder will contains zip report

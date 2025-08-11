@@ -47,20 +47,20 @@ public class VerifySalesUserInitiateRRARequest extends ApplicationSetup {
         String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
         ExtentReportBuilder.ReportTestStep(methodName, "Test started: verify Sales user can initiate RRA request", "INFO");
 
-        // Step 1: Validate dashboard visibility
-        objHomeBL.validateDashboardTitleVisibility(driver);
+        // Step 1: Validate Dashboard visibility
+        objHomeBL.validateDashboardTitleVisibility();
         
      // Step 2: Navigate to Opportunity Tracker screen
-        objHomeBL.navigateToOpportunityTrackerAndLogStatus(driver);
+        objHomeBL.navigateToOpportunityTrackerAndLogStatus();
 
         // Step 3: Search for a specific Opportunity ID
-        objOppoTracker.searchOpportunityAndLogStatus(driver, oppoID);
+        objOppoTracker.searchOpportunityAndLogStatus(oppoID);
 
         // Step 4: Verify Opportunity ID exists and click "Request Resource Allocation"
-        objOppoTracker.verifyOppoIDAndClickRequestAllocation(driver, oppoID);
+        objOppoTracker.verifyOppoIDAndClickRequestAllocation(oppoID);
         
 
         // Step 5: Verify Techstack available and click on Submit button
-        objResourceAllocation.handleResourceAllocationFormAndClickOnSubmitButton(driver);
+        objResourceAllocation.handleResourceAllocationFormAndClickOnSubmitButton();
     }
 }

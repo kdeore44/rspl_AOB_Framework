@@ -25,18 +25,18 @@ public class AddNewResourceRequisition extends ApplicationSetup {
         ExtentReportBuilder.ReportTestStep(methodName, "Test started: Verify HOD user can tag resource", "INFO");
 
         // Step 1: Validate dashboard visibility
-        objHomeBL.validateDashboardTitleVisibility(driver);
+        objHomeBL.validateDashboardTitleVisibility();
 
         // Step 1.1: Navigate to Opportunity Tracker screen
-        objHomeBL.navigateToOpportunityTrackerAndLogStatus(driver);
+        objHomeBL.navigateToOpportunityTrackerAndLogStatus();
 
         // Step 2: Search for the given Opportunity ID
-        objOppoTracker.searchOpportunityAndLogStatus(driver, oppoID);
+        objOppoTracker.searchOpportunityAndLogStatus(oppoID);
 
         // Step 3: Click on the 'Tag Resources' button for given Opportunity
-        objOppoTracker.clickTagResourcesButtonForOppoID(driver, oppoID);
+        objOppoTracker.clickTagResourcesButtonForOppoID(oppoID);
         
         // Step 4: Fill out the requisition form and submit it
-        objNewResourceRequest.fillTheFormAndSubmit(driver, yearOfExp, noOfPositions, resourceType, departmentName);
+        objNewResourceRequest.fillTheFormAndSubmit(yearOfExp, noOfPositions, resourceType, departmentName);
     }
 }

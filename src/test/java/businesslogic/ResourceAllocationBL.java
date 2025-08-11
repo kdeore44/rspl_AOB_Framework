@@ -1,6 +1,7 @@
 package businesslogic;
 
 import java.io.IOException;
+
 import java.text.ParseException;
 import java.time.Duration;
 import java.util.HashMap;
@@ -12,6 +13,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import automationEngine.ApplicationSetup;
 import objectRepository.ResourceAllocationFormOR;
 import utilities.CommonMethods;
 import utilities.ExtentReportBuilder;
@@ -24,9 +26,10 @@ public class ResourceAllocationBL extends ExtentReportBuilder {
 	Duration due = Duration.ofSeconds(10);
 	
 	
-	public void handleResourceAllocationFormAndClickOnSubmitButton(WebDriver driver) throws IOException, ParseException {
+	public void handleResourceAllocationFormAndClickOnSubmitButton() throws IOException, ParseException {
 	    // Initialize method name for logging and reporting
 	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver = ApplicationSetup.getDriver();
 
 	    try {
 	        // Step 1: Wait for the Resource Allocation form to become visible
