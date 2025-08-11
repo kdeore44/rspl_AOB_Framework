@@ -58,7 +58,7 @@
 							
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testng.xml</suiteXmlFile>
+									<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 								</suiteXmlFiles>
 
 								<!-- System variables passing for TestCase execution -->

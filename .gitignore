@@ -4,3 +4,4 @@
 **/ExtentReports/
 **/logs/
 **/test-output/
+/target/
