@@ -26,7 +26,7 @@ public class VerifyHODUserTagsResource extends ApplicationSetup {
 
         // Step 1: Validate dashboard visibility
         objHomeBL.validateDashboardTitleVisibility();
-        System.out.println("Added line for code check");
+        System.out.println("Added line for code checked");
 
         // Step 2: Navigate to Opportunity Tracker screen
         objHomeBL.navigateToOpportunityTrackerAndLogStatus();
