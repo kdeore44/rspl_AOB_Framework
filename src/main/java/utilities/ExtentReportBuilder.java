@@ -47,6 +47,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -293,13 +294,16 @@ public class ExtentReportBuilder {
 
 	}
 
-	public static void ReportInitialization(String TestName) throws NullPointerException, ParseException {
-		logger.info(TestName);
-		
-			test = extent.createTest(TestName, "");
-			
-			ExecutionStartTime = GetSystemDate();
-			CreateBaseSyntax();
+	public static void ReportInitialization(String TestName) throws Exception {
+		   if (extent == null) {
+			   initExtentReport();
+		    }
+
+		    logger.info("Initializing Test Report for: " + TestName);
+		    test = extent.createTest(TestName, "");
+
+		    ExecutionStartTime = GetSystemDate();
+		    CreateBaseSyntax();
 		
 		// Create folder for report generation
 

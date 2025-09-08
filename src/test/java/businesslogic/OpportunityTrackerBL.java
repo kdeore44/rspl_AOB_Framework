@@ -230,6 +230,55 @@ public class OpportunityTrackerBL extends ExtentReportBuilder {
 	        throw e;
 	    }
 	}
+	
+	
+	// Negative test case
+	public void verifyOppoIDInAllOpportunitySection(String expectedOppoID) throws IOException, ParseException {
+	    String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+	    WebDriver driver = ApplicationSetup.getDriver();
 
+	    try {
+	        // Step 1: Scroll to Opportunity Table and wait for search result
+	        CM.scrollToElement(driver, objOT.allOppoTable);
+	        CM.waitForSearchResult(driver, expectedOppoID, 15);
 
+	        // Step 2: Locate Opportunity ID cell
+	        WebElement resultCell = driver.findElement(By.xpath("//td[contains(text(),'" + expectedOppoID + "')]"));
+	        String uiOppoID = resultCell.getText().trim();
+	        System.out.println("Found Opportunity ID on UI: " + uiOppoID);
+
+	        // Step 3: Validate if element is displayed
+	        if (resultCell.isDisplayed()) {
+	            if (uiOppoID.equalsIgnoreCase(expectedOppoID)) {
+	                ExtentReportBuilder.ReportTestStep("PASSED", "PASS", "Opportunity ID '" + expectedOppoID + "' found in All Opportunities table", methodName);
+	                
+	                Assert.assertEquals(uiOppoID, oppoID, "Mismatch between expected and actual Opportunity ID");
+	                System.out.println("Actual and Expected Oppo ID matched");
+	            } else {
+	                ExtentReportBuilder.ReportTestStep("FAILED", "FAIL", "Expected ID '" + expectedOppoID + "' but found '" + uiOppoID + "'", methodName);
+	                Assert.fail("Opportunity ID mismatch: expected=" + expectedOppoID + ", actual=" + uiOppoID);
+	            }
+	        } else {
+	            ExtentReportBuilder.ReportTestStep("FAILED", "FAIL", "Opportunity ID '" + expectedOppoID + "' not visible in the table", methodName);
+	            Assert.fail("Opportunity ID '" + expectedOppoID + "' not visible in the table.");
+	        }
+
+	    } catch (TimeoutException e) {
+	        ExtentReportBuilder.ReportTestStep("FAILED", "FAIL", "Timeout while waiting for Opportunity Table with ID: " + expectedOppoID, methodName);
+	        e.printStackTrace();
+	        Assert.fail("TimeoutException: " + e.getMessage());
+
+	    } catch (NoSuchElementException e) {
+	        ExtentReportBuilder.ReportTestStep("FAILED", "FAIL", "Opportunity ID '" + oppoID + "' not found in table", methodName);
+	        e.printStackTrace();
+	        Assert.fail("NoSuchElementException: " + e.getMessage());
+
+	    } catch (Exception e) {
+	        ExtentReportBuilder.ReportTestStep("FAILED", "FAIL", "Exception while verifying Opportunity ID: " + e.getMessage(), methodName);
+	        e.printStackTrace();
+	        Assert.fail("Exception: " + e.getMessage());
+	    }
+	}
 }
+
+

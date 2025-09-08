@@ -1,8 +1,5 @@
 package testCases;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -40,7 +37,7 @@ public class VerifySalesUserInitiateRRARequest extends ApplicationSetup {
     @Test(description = "Verify Sales user can initiate Resource Request Allocation")
     @Parameters("oppoID") 
     
-    public void verifySalesUserInitiateRRARequest(String oppoID) throws IOException, ParseException, InterruptedException {
+    public void verifySalesUserInitiateRRARequest(String oppoID) throws Exception {
 
         ExtentReportBuilder.ReportInitialization("Verify Sales User Initiate RRA Request");
 

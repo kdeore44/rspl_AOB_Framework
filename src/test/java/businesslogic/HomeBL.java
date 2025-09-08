@@ -83,6 +83,18 @@ public class HomeBL extends ExtentReportBuilder {
 	        Assert.fail("Exception while navigating to Opportunity Tracker: " + e.getMessage());
 	    }
 	}
+	
+	public void verifyTheErrorMessageOnclickingbutton() throws IOException, ParseException {
+		 String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+		    WebDriver driver = ApplicationSetup.getDriver();
+		    try {
+		    	
+		    } catch (TimeoutException e) {
+		        ExtentReportBuilder.ReportTestStep("FAILED", "FAIL", "Opportunity Tracker submenu not visible in time", methodName);
+		        e.printStackTrace();
+		        Assert.fail("Timeout while waiting for Opportunity Tracker submenu: " + e.getMessage());
+		    }
+	}
 
 
 	
